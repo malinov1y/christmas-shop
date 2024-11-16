@@ -66,7 +66,7 @@ body {
 .main {
   width: 100%;
   background-color: #FF4646;
-  background-image: url("../assets/img/bg-snow.png"), url("../assets/img/bg-ball.png");
+  background-image: url("../../assets/img/bg-snow.png"), url("../../assets/img/bg-ball.png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
