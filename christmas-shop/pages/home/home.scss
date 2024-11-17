@@ -1,7 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Allura&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
+
+
+
+
 $margin: 82px;
+
+
 $color-dark: #181C29;
 $primary: #FF4646;
 $static-white: #FFFFFF;
@@ -13,6 +19,10 @@ $tag-pink: #FF43F7;
 $overlay: #181C29CC;
 $static-white-20: #FFFFFF33;
 $tag-green: #06A44F;
+
+
+
+
 
 @mixin action-small{
     font-family: "Montserrat", sans-serif;
@@ -39,6 +49,34 @@ $tag-green: #06A44F;
     letter-spacing: 0.175em;
     text-transform: uppercase;
 }
+
+@mixin header2{
+    font-family: "Montserrat", sans-serif;
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 153%;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+}
+
+@mixin paragraph{
+    font-family: "Montserrat", sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 148%;
+}
+
+@mixin background{
+    background-color: $primary;
+    background-image: url("../../assets/img/bg-snow.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+
+
+
 
 * {
     margin: 0;
@@ -92,6 +130,13 @@ body{
                 color: $color-dark;
                 text-decoration: none;
                 padding: 12px 20px;
+                border-radius: 12px;
+                transition: all 0.5s ease;
+
+                &:hover{
+                    background-color: $primary-10;
+                    color: $primary;
+                }
             }
         }
     }
@@ -99,15 +144,14 @@ body{
 
 .main{
     width: 100%;
-    background-color: $primary;
-    background-image: url("../../assets/img/bg-snow.png"), url("../../assets/img/bg-ball.png");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    border-radius: 20px 20px 0 0;
 
     .hero{
+        @include background;
+        background-image: url("../../assets/img/bg-snow.png"), url("../../assets/img/bg-ball.png");
+        border-radius: 20px 20px 0 0;
         padding: 60px 0;
+        display: flex;
+        justify-content: center;
     }
 
     .hero-container{
@@ -117,6 +161,7 @@ body{
         justify-content: center;
         align-items: center;
         gap: 12px;
+        max-width: 426px;
 
         .hero-caption{
             @include caption;
@@ -124,8 +169,7 @@ body{
             color: $static-white;
         }
 
-        .hero-header{
-            max-width: 426px;
+        .hero-header1{
             @include header1;
             text-align: center;
             color: $static-white;
@@ -139,6 +183,54 @@ body{
             text-align: center;
             color: $static-white;
             text-decoration: none;
+            transition: all 0.7s ease;
+
+            &:hover{
+                background-color: $static-white;
+                color: $color-dark;
+            }
+        }
+    }
+
+    .about{
+        @include background;
+        padding: 60px 0;
+
+        .about-container{
+            background-color: $static-white;
+            border-radius: 20px;
+            margin: 0 $margin;
+            display: flex;
+            justify-content: end;
+            align-items: center;
+            gap: 152px;
+
+            .about-text{
+                max-width: 426px;
+                padding: 60px 0px;
+                display: flex;
+                flex-direction: column;
+                gap: 20px;
+
+                .about-text__caption{
+                    @include caption;
+                    color: $primary;
+                }
+
+                .about-text__header2{
+                    @include header2;
+                    color: $color-dark;
+                }
+
+                .about-text__paragraph{
+                    @include paragraph;
+                    color: $color-dark;
+                }
+            }
+
+            .about-img{
+                border-radius: 20px;
+            }
         }
     }
 }
