@@ -54,8 +54,26 @@ $tag-green: #06A44F;
     font-family: "Montserrat", sans-serif;
     font-size: 24px;
     font-weight: 600;
-    line-height: 153%;
+    line-height: 152%;
     letter-spacing: 0.16em;
+    text-transform: uppercase;
+}
+
+@mixin header3{
+    font-family: "Montserrat", sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 152%;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+@mixin header4{
+    font-family: "Montserrat", sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 130%;
+    letter-spacing: 0.05em;
     text-transform: uppercase;
 }
 
@@ -276,6 +294,7 @@ body{
                 .slider-item{
                     display: flex;
                     align-items: center;
+                    
                     &:first-child{
                         margin-left: 82px;
                     }
@@ -329,6 +348,94 @@ body{
                     &:hover{
                         cursor: pointer;
                         background-color: $static-white;
+                    }
+                }
+            }
+        }
+    }
+
+    .bestGifts{
+        @include background;
+        padding: 60px 0;
+
+        .bestGifts-container{
+            margin: 0 $margin;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+
+            .bestGifts-text{
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 12px;
+
+                .bestGifts-text__caption{
+                    @include caption;
+                    color: $static-white;
+                }
+
+                .bestGifts-text__header2{
+                    @include header2;
+                    color: $static-white;
+                    text-align: center;
+                }
+            }
+
+            .bestGifts-cards{
+                display: flex;
+                gap: 12px;
+
+                .bestGifts-card{
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-between;
+                    border-radius: 20px;
+                    background-color: $content-background;
+
+                    .bestGifts-card__img{
+                        width: 310px;
+                        height: 230px;
+                    }
+
+                    .bestGifts-card__text{
+                        background-color: $static-white;
+                        border-radius: 20px;
+                        padding: 20px;
+                        height: 112px;
+                        display: flex;
+                        flex-direction: column;
+                        gap: 8px;
+
+                        .bestGifts-card__text-h4{
+                            @include header4;
+
+                            &.work{
+                                color: $tap-purple;
+                            }
+
+                            &.health{
+                                color: $tag-green;
+                            }
+
+                            &.harmony{
+                                color: $tag-pink
+                            }
+                        }
+
+                        .bestGifts-card__text-h3{
+                            @include header3;
+                            color: $color-dark;
+                            transition: all 0.5s ease;
+                        }
+                    }
+
+                    &:hover{
+                        cursor: pointer;
+
+                        .bestGifts-card__text-h3{
+                            color: $primary;
+                        }
                     }
                 }
             }
