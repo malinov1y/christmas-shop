@@ -66,6 +66,13 @@ $tag-green: #06A44F;
     line-height: 148%;
 }
 
+@mixin slider-text{
+    font-family: "Montserrat", sans-serif;
+    font-size: 80px;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
 @mixin background{
     background-color: $primary;
     background-image: url("../../assets/img/bg-snow.png");
@@ -197,9 +204,9 @@ body{
         padding: 60px 0;
 
         .about-container{
+            margin: 0 $margin;
             background-color: $static-white;
             border-radius: 20px;
-            margin: 0 $margin;
             display: flex;
             justify-content: end;
             align-items: center;
@@ -230,6 +237,100 @@ body{
 
             .about-img{
                 border-radius: 20px;
+            }
+        }
+    }
+
+    .slider{
+        @include background;
+        padding: 60px 0;
+
+        .slider-container{
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+
+            .slider-text{
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 12px;
+
+                .slider-text__caption{
+                    @include caption;
+                    color: $static-white;
+                }
+
+                .slider-text__header2{
+                    @include header2;
+                    color: $static-white;
+                    text-align: center;
+                    line-height: 150%;
+                }
+            }
+
+            .slider-items{
+                display: flex;
+                overflow: hidden;
+
+                .slider-item{
+                    display: flex;
+                    align-items: center;
+                    &:first-child{
+                        margin-left: 82px;
+                    }
+
+                    &:last-child{
+                        margin-right: 82px;
+                    }
+
+                    .slider-item__word{
+                        @include slider-text;
+                        color: $static-white;
+                        letter-spacing: 0.0035em;
+                    }
+
+                    .slider-item__img{
+                        width: 200px;
+                        height: 200px;
+                        border-radius: 20px;
+                        margin: 0 20px;
+                    }
+                }
+            }
+
+            .slider-button{
+                margin: 0 $margin;
+                display: flex;
+                justify-content: end;
+                gap: 20px;
+
+                .slider-button__left{
+                    border: 1px solid $static-white-40;
+                    border-radius: 20px;
+                    width: 56px;
+                    height: 56px;
+                    background-color: $primary;
+                }
+
+                .slider-button__right{
+                    border: 1px solid $static-white;
+                    border-radius: 20px;
+                    width: 56px;
+                    height: 56px;
+                    background-color: $primary;
+                    transition: all 0.5s ease;
+
+                    &:hover svg path{
+                        cursor: pointer;
+                        stroke: $primary;
+                    }
+
+                    &:hover{
+                        cursor: pointer;
+                        background-color: $static-white;
+                    }
+                }
             }
         }
     }
