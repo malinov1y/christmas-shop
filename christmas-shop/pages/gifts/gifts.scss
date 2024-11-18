@@ -1,0 +1,286 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Allura&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+
+
+
+
+$margin: 82px;
+
+
+$color-dark: #181C29;
+$primary: #FF4646;
+$static-white: #FFFFFF;
+$tap-purple: #4361FF;
+$content-background: #ECF3F8;
+$primary-10: #FF46461A;
+$static-white-40: #FFFFFF66;
+$tag-pink: #FF43F7;
+$overlay: #181C29CC;
+$static-white-20: #FFFFFF33;
+$tag-green: #06A44F;
+
+
+
+
+
+@mixin action-small{
+    font-family: "Montserrat", sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 133%;
+    letter-spacing: 0.049em;;
+    text-transform: uppercase;
+}
+
+@mixin caption{
+    font-family: "Allura", sans-serif;
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 100%;
+    letter-spacing: 0.05em;
+}
+
+@mixin header1{
+    font-family: "Montserrat", sans-serif;
+    font-size: 32px;
+    font-weight: 600;
+    line-height: 150%;
+    letter-spacing: 0.175em;
+    text-transform: uppercase;
+}
+
+@mixin header2{
+    font-family: "Montserrat", sans-serif;
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 152%;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+}
+
+@mixin header3{
+    font-family: "Montserrat", sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 152%;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+@mixin header4{
+    font-family: "Montserrat", sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 130%;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+}
+
+@mixin paragraph{
+    font-family: "Montserrat", sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 148%;
+}
+
+@mixin slider-text{
+    font-family: "Montserrat", sans-serif;
+    font-size: 80px;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+@mixin action-large{
+    font-family: "Montserrat", sans-serif;
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 152%;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+}
+
+@mixin background{
+    background-color: $primary;
+    background-image: url("../../assets/img/bg-snow.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+
+
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+body{
+    max-width: 1440px;
+    margin: 0 auto;
+}
+
+.header{
+    width: 100%;
+
+    .header-container{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 0 $margin;
+
+        .header-logo{
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin: 12px 0;
+            padding: 8px 20px;
+            text-decoration: none;
+
+            .header-logo__title{
+                @include action-small;
+                color: $color-dark;
+            }
+        }
+
+        .header-menu{
+
+            .header-menu__items{
+                list-style: none;
+                display: flex;
+                gap: 8px;
+            }
+
+            .header-menu__item{
+                @include action-small;
+                color: $color-dark;
+            }
+
+            .header-menu__a{
+                @include action-small;
+                color: $color-dark;
+                text-decoration: none;
+                padding: 12px 20px;
+                border-radius: 12px;
+                transition: all 0.5s ease;
+
+                &.active{
+                    background-color: $primary-10;
+                    color: $primary;
+                    cursor: default;
+                }
+
+                &:hover{
+                    background-color: $primary-10;
+                    color: $primary;
+                }
+            }
+        }
+    }
+}
+
+.footer{
+    width: 100%;
+    padding: 60px 0;
+
+    .footer-container{
+        margin: 0 $margin;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 60px;
+
+        .footer-container__cards{
+            width: 100%;
+            display: flex;
+            gap: 12px;
+
+            .footer-container__card{
+                background-color: $content-background;
+                border-radius: 20px;
+                padding: 20px;
+                display: flex;
+                flex-direction: column;
+                gap: 12px;
+                align-items: center;
+                flex-grow: 1;
+                max-width: 417.33px;
+                text-decoration: none;
+
+                .footer-container__card-action{
+                    @include action-large;
+                    color: $color-dark;
+                    line-height: 150%;
+                    transition: color 0.5s ease;
+                }
+
+                .footer-container__card-header3{
+                    @include header3;
+                    color: $color-dark;
+                    line-height: 150%;
+                    transition: color 0.5s ease;
+                }
+
+                &:hover{
+
+                    .footer-container__card-action{
+                        color: $primary;
+                    }
+
+                    .footer-container__card-header3{
+                        color: $primary;
+                    }
+                }
+            }
+        }
+
+        .footer-container__text{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+
+            .footer-container__socials{
+                display: flex;
+                gap: 12px;
+
+                .footer-container__social{
+                    padding: 8px;
+
+                    svg path {
+                        stroke: $color-dark;
+                        transition: stroke 0.5s ease;
+                    }
+
+                    &:hover svg path{
+                        stroke: $primary;
+                    }
+                }
+            }
+
+            .footer-container__text-paragraph{
+                @include paragraph;
+                color: $color-dark;
+                line-height: 150%;
+            }
+
+            .footer-container__text-caption{
+                @include caption;
+                color: $color-dark;
+                text-decoration: none;
+                transition: color 0.5s ease;
+
+                &:hover{
+                    color: $primary;
+                }
+            }
+        }
+    }
+}
