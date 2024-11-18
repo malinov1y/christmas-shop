@@ -78,6 +78,122 @@ body {
   color: #FF4646;
 }
 
+.main {
+  width: 100%;
+}
+.main .gifts {
+  background-color: #FF4646;
+  background-image: url("../../assets/img/bg-garland.png");
+  background-repeat: no-repeat;
+  background-size: 100%;
+  padding: 60px 0;
+  border-radius: 20px;
+}
+.main .gifts .gifts-container {
+  margin: 0 82px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+.main .gifts .gifts-container .gifts-container__header1 {
+  font-family: "Montserrat", sans-serif;
+  font-size: 32px;
+  font-weight: 600;
+  line-height: 150%;
+  letter-spacing: 0.175em;
+  text-transform: uppercase;
+  color: #FFFFFF;
+  text-align: center;
+  letter-spacing: 0.18em;
+  max-width: 426px;
+}
+.main .gifts .gifts-container .gifts-container__tabs {
+  display: flex;
+  gap: 8px;
+}
+.main .gifts .gifts-container .gifts-container__tabs .gifts-container__tab {
+  font-family: "Montserrat", sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 133%;
+  letter-spacing: 0.049em;
+  text-transform: uppercase;
+  color: #FFFFFF;
+  border-radius: 12px;
+  border: none;
+  padding: 12px 20px;
+  background-color: #FF4646;
+  cursor: pointer;
+  transition: background-color 0.7s ease;
+}
+.main .gifts .gifts-container .gifts-container__tabs .gifts-container__tab.active {
+  background-color: rgba(255, 255, 255, 0.2);
+  cursor: default;
+}
+.main .gifts .gifts-container .gifts-container__tabs .gifts-container__tab:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+.main .gifts .gifts-container .gifts-cards {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+.main .gifts .gifts-container .gifts-cards .gifts-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-radius: 20px;
+  background-color: #ECF3F8;
+  max-width: 310px;
+}
+.main .gifts .gifts-container .gifts-cards .gifts-card .gifts-card__img {
+  width: 310px;
+  height: 230px;
+}
+.main .gifts .gifts-container .gifts-cards .gifts-card .gifts-card__text {
+  background-color: #FFFFFF;
+  border-radius: 20px;
+  padding: 20px;
+  height: 112px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.main .gifts .gifts-container .gifts-cards .gifts-card .gifts-card__text .gifts-card__text-h4 {
+  font-family: "Montserrat", sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 130%;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+.main .gifts .gifts-container .gifts-cards .gifts-card .gifts-card__text .gifts-card__text-h4.work {
+  color: #4361FF;
+}
+.main .gifts .gifts-container .gifts-cards .gifts-card .gifts-card__text .gifts-card__text-h4.health {
+  color: #06A44F;
+}
+.main .gifts .gifts-container .gifts-cards .gifts-card .gifts-card__text .gifts-card__text-h4.harmony {
+  color: #FF43F7;
+}
+.main .gifts .gifts-container .gifts-cards .gifts-card .gifts-card__text .gifts-card__text-h3 {
+  font-family: "Montserrat", sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 152%;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #181C29;
+  transition: all 0.5s ease;
+}
+.main .gifts .gifts-container .gifts-cards .gifts-card:hover {
+  cursor: pointer;
+}
+.main .gifts .gifts-container .gifts-cards .gifts-card:hover .gifts-card__text-h3 {
+  color: #FF4646;
+}
+
 .footer {
   width: 100%;
   padding: 60px 0;

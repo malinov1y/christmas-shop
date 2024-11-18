@@ -186,6 +186,120 @@ body{
     }
 }
 
+.main{
+    width: 100%;
+
+    .gifts{
+        background-color: $primary;
+        background-image: url("../../assets/img/bg-garland.png");
+        background-repeat: no-repeat;
+        background-size: 100%;
+        padding: 60px 0;
+        border-radius: 20px;
+
+        .gifts-container{
+            margin: 0 $margin;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+
+            .gifts-container__header1{
+                @include header1;
+                color: $static-white;
+                text-align: center;
+                letter-spacing: 0.18em;
+                max-width: 426px;
+            }
+
+            .gifts-container__tabs{
+                display: flex;
+                gap: 8px;
+
+                .gifts-container__tab{
+                    @include action-small;
+                    color: $static-white;
+                    border-radius: 12px;
+                    border: none;
+                    padding: 12px 20px;
+                    background-color: $primary;
+                    cursor: pointer;
+                    transition: background-color 0.7s ease;
+
+                    &.active{
+                        background-color: $static-white-20;
+                        cursor: default;
+                    }
+
+                    &:hover{
+                        background-color: $static-white-20;
+                    }
+                }
+            }
+
+            .gifts-cards{
+                display: flex;
+                gap: 12px;
+                flex-wrap: wrap;
+
+                .gifts-card{
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-between;
+                    border-radius: 20px;
+                    background-color: $content-background;
+                    max-width: 310px;
+
+                    .gifts-card__img{
+                        width: 310px;
+                        height: 230px;
+                    }
+
+                    .gifts-card__text{
+                        background-color: $static-white;
+                        border-radius: 20px;
+                        padding: 20px;
+                        height: 112px;
+                        display: flex;
+                        flex-direction: column;
+                        gap: 8px;
+
+                        .gifts-card__text-h4{
+                            @include header4;
+
+                            &.work{
+                                color: $tap-purple;
+                            }
+
+                            &.health{
+                                color: $tag-green;
+                            }
+
+                            &.harmony{
+                                color: $tag-pink
+                            }
+                        }
+
+                        .gifts-card__text-h3{
+                            @include header3;
+                            color: $color-dark;
+                            transition: all 0.5s ease;
+                        }
+                    }
+
+                    &:hover{
+                        cursor: pointer;
+
+                        .gifts-card__text-h3{
+                            color: $primary;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
 .footer{
     width: 100%;
     padding: 60px 0;
