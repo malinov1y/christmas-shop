@@ -183,6 +183,48 @@ body{
                 }
             }
         }
+
+        .header-burger{
+            height: 40px;
+            width: 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 8px;
+            cursor: pointer;
+            display: none;
+            transition: all 0.5s ease;
+
+            .header-burger__line{
+                background-color: $color-dark;
+                border-radius: 1px;
+                height: 1px;
+                width: 22px;
+            }
+        }
+
+        @media (max-width: 769px){
+            .header-menu{
+                display: none;
+            }
+
+            .header-burger{
+                display: flex;
+            }
+        }
+    }
+
+    @media (max-width: 1440px){
+        .header-container{
+            margin: 0 calc(8px + (82 - 8) * ((100vw - 768px) / (1440 - 768)));
+        }
+    }
+
+    @media (max-width: 768px){
+        .header-container{
+            margin: 0 8px;
+        }
     }
 }
 
@@ -235,10 +277,29 @@ body{
                         background-color: $static-white-20;
                     }
                 }
+
+                @media (max-width: 768px){
+                    .gifts-container__tab{
+                        padding: 12px calc(8px + (20 - 8) * ((100vw - 380px) / (768 - 380)));
+                    }
+                }
+
+                @media (max-width: 380px){
+                    .gifts-container__tab{
+                        padding: 12px 8px;
+                    }
+                }
+            }
+
+            @media (max-width: 767px){
+                .gifts-container__tabs{
+                    gap: 0;
+                }
             }
 
             .gifts-cards{
                 display: flex;
+                justify-content: center;
                 gap: 12px;
                 flex-wrap: wrap;
 
@@ -297,6 +358,12 @@ body{
                 }
             }
         }
+
+        @media (max-width: 1439px){
+            .gifts-container{
+                margin: 0 8px;
+            }
+        }
     }
 }
 
@@ -353,6 +420,18 @@ body{
                     }
                 }
             }
+
+            @media (max-width: 1280px){
+                .footer-container__card{
+                    max-width: none;
+                }
+            }
+        }
+
+        @media (max-width: 1280px){
+            .footer-container__cards{
+                flex-direction: column;
+            }
         }
 
         .footer-container__text{
@@ -395,6 +474,18 @@ body{
                     color: $primary;
                 }
             }
+        }
+    }
+
+    @media (max-width: 1440px){
+        .footer-container{
+            margin: 0 calc(8px + (82 - 8) * ((100vw - 768px) / (1440 - 768)));
+        }
+    }
+
+    @media (max-width: 768px){
+        .footer-container{
+            margin: 0 8px;
         }
     }
 }
