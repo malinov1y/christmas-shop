@@ -177,6 +177,43 @@ body{
                 }
             }
         }
+
+        .header-burger{
+            height: 40px;
+            width: 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 8px;
+            cursor: pointer;
+            display: none;
+            transition: all 0.5s ease;
+
+            .header-burger__line{
+                background-color: $color-dark;
+                border-radius: 1px;
+                height: 1px;
+                width: 22px;
+            }
+        }
+
+        @media (max-width: 769px){
+            .header-menu{
+                display: none;
+            }
+
+            .header-burger{
+                display: flex;
+            }
+        }
+    }
+
+    @media (max-width: 1440px){
+        .header-container{
+            margin-left: calc(8px + (82 - 8) * ((100vw - 768px) / (1440 - 768)));
+            margin-right: calc(8px + (82 - 8) * ((100vw - 768px) / (1440 - 768)));
+        }
     }
 }
 
@@ -239,13 +276,13 @@ body{
             background-color: $static-white;
             border-radius: 20px;
             display: flex;
-            justify-content: end;
+            justify-content: space-between;
             align-items: center;
-            gap: 152px;
 
             .about-text{
                 max-width: 426px;
                 padding: 60px 0px;
+                margin: 0 60px;
                 display: flex;
                 flex-direction: column;
                 gap: 20px;
@@ -266,8 +303,36 @@ body{
                 }
             }
 
+            @media (max-width: 1440px){
+                .about-text{
+                    width: calc(256px + (426 - 256) * ((100vw - 768px) / (1440 - 768)));
+                }
+            }
+
             .about-img{
+                width: 638px;
+                height: 528px;
+                background-image: url('../../assets/img/santa.png');
+                background-position: center;
                 border-radius: 20px;
+            }
+
+            @media (max-width: 1440px){
+                .about-img{
+                    width: calc(376px + (638 - 376) * ((100vw - 768px) / (1440 - 768)));
+                }
+            }
+        }
+
+        @media (max-width: 1440px){
+            .about-container{
+                margin: 0 calc(8px + (82 - 8) * ((100vw - 768px) / (1440 - 768)));
+            }
+        }
+
+        @media (max-width: 768px){
+            .about-container{
+                margin: 0 8px;
             }
         }
     }
@@ -328,6 +393,18 @@ body{
                         margin: 0 20px;
                     }
                 }
+
+                @media (max-width: 1440px){
+                    .slider-item{
+                        &:first-child{
+                            margin-left: calc(8px + (82 - 8) * ((100vw - 768px) / (1440 - 768)));
+                        }
+
+                        &:last-child{
+                            margin-right: calc(8px + (82 - 8) * ((100vw - 768px) / (1440 - 768)));
+                        }
+                    }
+                }
             }
 
             .slider-button{
@@ -363,6 +440,12 @@ body{
                     }
                 }
             }
+
+            @media (max-width: 1440px){
+                .slider-button{
+                    margin: 0 calc(8px + (82 - 8) * ((100vw - 768px) / (1440 - 768)));
+                }
+            }
         }
     }
 
@@ -396,6 +479,8 @@ body{
 
             .bestGifts-cards{
                 display: flex;
+                justify-content: center;
+                flex-wrap: wrap;
                 gap: 12px;
 
                 .bestGifts-card{
@@ -404,6 +489,7 @@ body{
                     justify-content: space-between;
                     border-radius: 20px;
                     background-color: $content-background;
+                    max-width: 310px;
 
                     .bestGifts-card__img{
                         width: 310px;
@@ -450,6 +536,12 @@ body{
                         }
                     }
                 }
+            }
+        }
+
+        @media (max-width: 1440px){
+            .bestGifts-container{
+                margin: 0 calc(68px + (82 - 68) * ((100vw - 768px) / (1440 - 768)));
             }
         }
     }
@@ -543,6 +635,7 @@ body{
 }
 
 .footer{
+    width: 100%;
     padding: 60px 0;
 
     .footer-container{
@@ -594,6 +687,18 @@ body{
                     }
                 }
             }
+
+            @media (max-width: 1280px){
+                .footer-container__card{
+                    max-width: none;
+                }
+            }
+        }
+
+        @media (max-width: 1280px){
+            .footer-container__cards{
+                flex-direction: column;
+            }
         }
 
         .footer-container__text{
@@ -636,6 +741,12 @@ body{
                     color: $primary;
                 }
             }
+        }
+    }
+
+    @media (max-width: 1440px){
+        .footer-container{
+            margin: 0 calc(8px + (82 - 8) * ((100vw - 768px) / (1440 - 768)));
         }
     }
 }
