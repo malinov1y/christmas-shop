@@ -335,6 +335,7 @@ body {
   display: flex;
   flex-direction: column;
   gap: 20px;
+  overflow: hidden;
 }
 .main .slider .slider-container .slider-text {
   display: flex;
@@ -362,18 +363,15 @@ body {
   line-height: 150%;
 }
 .main .slider .slider-container .slider-items {
+  margin: 0 82px;
   display: flex;
-  overflow: hidden;
+  gap: 20px;
+  transition: transform 0.5s ease;
 }
 .main .slider .slider-container .slider-items .slider-item {
   display: flex;
   align-items: center;
-}
-.main .slider .slider-container .slider-items .slider-item:first-child {
-  margin-left: 82px;
-}
-.main .slider .slider-container .slider-items .slider-item:last-child {
-  margin-right: 82px;
+  gap: 20px;
 }
 .main .slider .slider-container .slider-items .slider-item .slider-item__word {
   font-family: "Montserrat", sans-serif;
@@ -387,22 +385,15 @@ body {
   width: 200px;
   height: 200px;
   border-radius: 20px;
-  margin: 0 20px;
 }
 @media (max-width: 1440px) {
-  .main .slider .slider-container .slider-items .slider-item:first-child {
-    margin-left: calc(8px + 74 * (100vw - 768px) / 672);
-  }
-  .main .slider .slider-container .slider-items .slider-item:last-child {
-    margin-right: calc(8px + 74 * (100vw - 768px) / 672);
+  .main .slider .slider-container .slider-items {
+    margin: 0 calc(8px + 74 * (100vw - 768px) / 672);
   }
 }
 @media (max-width: 768px) {
-  .main .slider .slider-container .slider-items .slider-item:first-child {
-    margin-left: 8px;
-  }
-  .main .slider .slider-container .slider-items .slider-item:last-child {
-    margin-right: 8px;
+  .main .slider .slider-container .slider-items {
+    margin: 0 8px;
   }
 }
 .main .slider .slider-container .slider-button {
@@ -411,28 +402,31 @@ body {
   justify-content: end;
   gap: 20px;
 }
-.main .slider .slider-container .slider-button .slider-button__left {
-  border: 1px solid rgba(255, 255, 255, 0.4);
-  border-radius: 20px;
-  width: 56px;
-  height: 56px;
-  background-color: #FF4646;
-}
+.main .slider .slider-container .slider-button .slider-button__left,
 .main .slider .slider-container .slider-button .slider-button__right {
   border: 1px solid #FFFFFF;
   border-radius: 20px;
   width: 56px;
   height: 56px;
   background-color: #FF4646;
-  transition: all 0.5s ease;
+  transition: background-color 0.3s ease;
 }
-.main .slider .slider-container .slider-button .slider-button__right:hover svg path {
-  cursor: pointer;
-  stroke: #FF4646;
+.main .slider .slider-container .slider-button .slider-button__left:disabled,
+.main .slider .slider-container .slider-button .slider-button__right:disabled {
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  border-radius: 20px;
+  width: 56px;
+  height: 56px;
+  background-color: #FF4646;
 }
-.main .slider .slider-container .slider-button .slider-button__right:hover {
+.main .slider .slider-container .slider-button .slider-button__left:not(:disabled):hover,
+.main .slider .slider-container .slider-button .slider-button__right:not(:disabled):hover {
   cursor: pointer;
   background-color: #FFFFFF;
+}
+.main .slider .slider-container .slider-button .slider-button__left:not(:disabled):hover svg path,
+.main .slider .slider-container .slider-button .slider-button__right:not(:disabled):hover svg path {
+  stroke: #FF4646;
 }
 @media (max-width: 1440px) {
   .main .slider .slider-container .slider-button {

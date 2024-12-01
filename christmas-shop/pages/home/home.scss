@@ -437,6 +437,7 @@ body{
             display: flex;
             flex-direction: column;
             gap: 20px;
+            overflow: hidden;
 
             .slider-text{
                 display: flex;
@@ -458,19 +459,15 @@ body{
             }
 
             .slider-items{
+                margin: 0 82px;
                 display: flex;
-                overflow: hidden;
+                gap: 20px;
+                transition: transform 0.5s ease;
 
                 .slider-item{
                     display: flex;
                     align-items: center;
-                    &:first-child{
-                        margin-left: 82px;
-                    }
-
-                    &:last-child{
-                        margin-right: 82px;
-                    }
+                    gap: 20px;
 
                     .slider-item__word{
                         @include slider-text;
@@ -482,32 +479,19 @@ body{
                         width: 200px;
                         height: 200px;
                         border-radius: 20px;
-                        margin: 0 20px;
                     }
                 }
+            }
 
-                @media (max-width: 1440px){
-                    .slider-item{
-                        &:first-child{
-                            margin-left: calc(8px + (82 - 8) * ((100vw - 768px) / (1440 - 768)));
-                        }
-
-                        &:last-child{
-                            margin-right: calc(8px + (82 - 8) * ((100vw - 768px) / (1440 - 768)));
-                        }
-                    }
+            @media (max-width: 1440px){
+                .slider-items{
+                    margin: 0 calc(8px + (82 - 8) * ((100vw - 768px) / (1440 - 768)));
                 }
+            }
 
-                @media (max-width: 768px){
-                    .slider-item{
-                        &:first-child{
-                            margin-left: 8px;
-                        }
-
-                        &:last-child{
-                            margin-right: 8px;
-                        }
-                    }
+            @media (max-width: 768px){
+                .slider-items{
+                    margin: 0 8px;
                 }
             }
 
@@ -517,30 +501,30 @@ body{
                 justify-content: end;
                 gap: 20px;
 
-                .slider-button__left{
-                    border: 1px solid $static-white-40;
-                    border-radius: 20px;
-                    width: 56px;
-                    height: 56px;
-                    background-color: $primary;
-                }
-
+                .slider-button__left,
                 .slider-button__right{
                     border: 1px solid $static-white;
                     border-radius: 20px;
                     width: 56px;
                     height: 56px;
                     background-color: $primary;
-                    transition: all 0.5s ease;
+                    transition: background-color 0.3s ease;
 
-                    &:hover svg path{
-                        cursor: pointer;
-                        stroke: $primary;
+                    &:disabled{
+                        border: 1px solid $static-white-40;
+                        border-radius: 20px;
+                        width: 56px;
+                        height: 56px;
+                        background-color: $primary;
                     }
 
-                    &:hover{
+                    &:not(:disabled):hover {
                         cursor: pointer;
                         background-color: $static-white;
+
+                        svg path {
+                            stroke: $primary;
+                        }
                     }
                 }
             }
