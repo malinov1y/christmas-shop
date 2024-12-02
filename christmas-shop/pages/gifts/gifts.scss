@@ -427,6 +427,14 @@ body{
             }
         }
     }
+
+    .scroll-button{
+        position: fixed;
+        bottom: 8px;
+        right: 8px;
+        display: none;
+        cursor: pointer;
+    }
 }
 
 .footer{

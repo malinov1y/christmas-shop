@@ -556,3 +556,20 @@ document.addEventListener('DOMContentLoaded', function() {
     randomArray(randomGifts);
     createCards(randomGifts);
 });
+
+
+
+//scroll-button
+const scrollButton = document.querySelector('.scroll-button');
+
+window.addEventListener('scroll', function() {
+    if (window.scrollY > 300 && window.innerWidth <= 768) {
+        scrollButton.style.display = 'block';
+    } else {
+        scrollButton.style.display = 'none';
+    }
+});
+
+scrollButton.addEventListener('click', function() {
+    window.scrollTo({ top: 0 });
+});

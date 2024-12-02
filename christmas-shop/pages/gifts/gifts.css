@@ -306,6 +306,13 @@ body {
     margin: 0 8px;
   }
 }
+.main .scroll-button {
+  position: fixed;
+  bottom: 8px;
+  right: 8px;
+  display: none;
+  cursor: pointer;
+}
 
 .footer {
   width: 100%;
