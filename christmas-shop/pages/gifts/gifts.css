@@ -306,6 +306,160 @@ body {
     margin: 0 8px;
   }
 }
+.main .modal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(24, 28, 41, 0.8);
+  display: none;
+}
+.main .modal.active {
+  display: flex;
+}
+.main .modal .modal-container {
+  background-color: #ECF3F8;
+  border-radius: 20px;
+  position: relative;
+  max-width: 400px;
+  width: 100%;
+}
+.main .modal .modal-container .modal-close {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+}
+.main .modal .modal-container .modal-close svg {
+  cursor: pointer;
+}
+.main .modal .modal-container .modal-content {
+  display: flex;
+  flex-direction: column;
+  border-radius: 20px;
+}
+.main .modal .modal-container .modal-content .modal-content__img {
+  width: 100%;
+  height: 230px;
+}
+.main .modal .modal-container .modal-content .modal-content__description {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  background-color: #FFFFFF;
+  border-radius: 20px;
+  padding: 20px 0;
+}
+.main .modal .modal-container .modal-content .modal-content__description .modal-content__text {
+  max-width: 360px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.main .modal .modal-container .modal-content .modal-content__description .modal-content__text .modal-content__text-h4 {
+  font-family: "Montserrat", sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 130%;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  line-height: 133%;
+}
+.main .modal .modal-container .modal-content .modal-content__description .modal-content__text .modal-content__text-h4.work {
+  color: #4361FF;
+}
+.main .modal .modal-container .modal-content .modal-content__description .modal-content__text .modal-content__text-h4.health {
+  color: #06A44F;
+}
+.main .modal .modal-container .modal-content .modal-content__description .modal-content__text .modal-content__text-h4.harmony {
+  color: #FF43F7;
+}
+.main .modal .modal-container .modal-content .modal-content__description .modal-content__text .modal-content__text-h3 {
+  font-family: "Montserrat", sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 152%;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #181C29;
+  line-height: 150%;
+}
+.main .modal .modal-container .modal-content .modal-content__description .modal-content__text .modal-content__text_description {
+  font-family: "Montserrat", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 148%;
+  color: #181C29;
+  line-height: 150%;
+}
+@media (max-width: 430px) {
+  .main .modal .modal-container .modal-content .modal-content__description .modal-content__text {
+    width: 324px;
+  }
+}
+.main .modal .modal-container .modal-content .modal-content__description .modal-content__superpowers {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  max-width: 360px;
+}
+.main .modal .modal-container .modal-content .modal-content__description .modal-content__superpowers .modal-content__superpowers-h4 {
+  font-family: "Montserrat", sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 130%;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: #181C29;
+  line-height: 133%;
+}
+.main .modal .modal-container .modal-content .modal-content__description .modal-content__superpowers .modal-content__powers {
+  display: flex;
+  flex-direction: column;
+}
+.main .modal .modal-container .modal-content .modal-content__description .modal-content__superpowers .modal-content__powers .modal-content__power {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 12px;
+}
+.main .modal .modal-container .modal-content .modal-content__description .modal-content__superpowers .modal-content__powers .modal-content__power .modal-content__power-name {
+  width: 184px;
+  font-family: "Montserrat", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 148%;
+  color: #181C29;
+  line-height: 150%;
+}
+.main .modal .modal-container .modal-content .modal-content__description .modal-content__superpowers .modal-content__powers .modal-content__power .modal-content__power-number {
+  font-family: "Montserrat", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 148%;
+  color: #181C29;
+  line-height: 150%;
+  letter-spacing: 0.0087em;
+}
+.main .modal .modal-container .modal-content .modal-content__description .modal-content__superpowers .modal-content__powers .modal-content__power .modal-content__power-snowflake {
+  display: flex;
+  gap: 8px;
+}
+@media (max-width: 430px) {
+  .main .modal .modal-container .modal-content .modal-content__description .modal-content__superpowers {
+    width: 324px;
+  }
+}
+@media (max-width: 430px) {
+  .main .modal .modal-container {
+    max-width: 364px;
+  }
+}
 .main .scroll-button {
   position: fixed;
   bottom: 8px;
