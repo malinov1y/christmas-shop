@@ -439,8 +439,9 @@ body{
         height: 100%;
         background-color: $overlay;
         display: none;
+        z-index: 1000;
 
-        &.active{
+        &.open{
             display: flex;
         }
 
