@@ -474,6 +474,7 @@ const leftButton = document.querySelector('.slider-button__left');
 const rightButton = document.querySelector('.slider-button__right');
 
 let currentPosition = 0;
+let changeScreenSize = false;
 
 function getClickDistance() {
     const screenWidth = window.innerWidth;
@@ -514,6 +515,12 @@ leftButton.addEventListener('click', function() {
         currentPosition = 0;
     }
     updateSliderPosition();
+});
+
+window.addEventListener('resize', function() {
+  changeScreenSize = true;
+  currentPosition = 0;
+  updateSliderPosition();
 });
 
 updateSliderPosition();
